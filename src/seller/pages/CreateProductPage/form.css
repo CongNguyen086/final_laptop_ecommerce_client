@@ -1,0 +1,10 @@
+.seller-form-custom {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.upload-container>.ant-form-item-control {
+    height: 120px;
+}
+.form-button-group {
+    text-align: right;
+}

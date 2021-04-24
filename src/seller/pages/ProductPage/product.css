@@ -1,0 +1,11 @@
+.cart-wrapper {
+    margin: 32px 0px;
+}
+.table-container {
+    margin: 32px 0px;
+    min-height: 400px;
+    box-shadow: 2px 10px 24px 0 var(--black-8);
+}
+.table-container .ant-card-body {
+    padding: 0;
+}

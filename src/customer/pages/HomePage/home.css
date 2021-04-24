@@ -1,0 +1,84 @@
+/* Card */
+
+.home-card {
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Panel */
+.main-panel {
+    margin-top: -20px;
+    padding: 20px;
+    height: 400px;
+    background-image: url('../../_media/image/main_panel.jpg');
+}
+
+.card-panel {
+    margin-top: 20px;
+}
+
+.catalog-card {
+    height: 350px;
+    width: 270px;
+    padding: 20px;
+}
+
+.main-panel .ant-card-body, .catalog-card .ant-card-body {
+    height: 100%;
+    position: relative;
+}
+
+.panel-title-container {
+    height: 50%;
+    font-family: 'Domine', serif;
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.94;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--white);
+}
+
+.panel-btn-container {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+}
+
+.panel-btn-container .panel-btn-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card-container {
+    position: absolute;
+    transform: translate(-50%, -20%);
+    left: 50%;
+    bottom: 0;
+}
+
+.card-btn-container {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.card-btn-container .panel-btn-text {
+    font-size: 14px;
+    line-height: 1.57;
+}
+
+.card-title {
+    font-family: 'Domine', serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.33;
+    color: var(--white);
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}

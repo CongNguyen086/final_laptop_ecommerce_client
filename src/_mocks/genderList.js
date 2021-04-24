@@ -1,0 +1,1 @@
+export default ['Men','Ladies','Girls','Boys']

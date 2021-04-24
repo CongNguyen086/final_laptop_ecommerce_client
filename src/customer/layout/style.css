@@ -1,0 +1,104 @@
+/* Layout */
+
+.main-layout {
+    background-color: white;
+}
+
+.main-container {
+    margin: 40px 100px;
+}
+
+/* Button */
+
+.submit-btn, .submit-btn:hover, .submit-btn:focus, 
+.add-cart-btn, .add-cart-btn:hover, .add-cart-btn:focus {
+    height: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    border: none;
+}
+.submit-btn {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+    background-color: var(--pale-orange) !important;
+}
+.form-custom .ant-btn[disabled], .form-custom .ant-btn[disabled]:hover,
+.add-cart-btn[disabled], .add-cart-btn[disabled]:hover {
+    color: white;
+    background-color: var(--white-four) !important;
+    border: none;
+    box-shadow: none;
+}
+
+.add-cart-btn {
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.12);
+    background-color: #5f6dff !important;
+}
+.suffix-icon {
+    font-size: 12px !important;
+    margin-left: 10px !important;
+}
+/* Breadcrumb */
+.page-breadcrumb {
+    text-align: center;
+}
+/* Size filter */
+
+.size-list {
+    border: unset;
+}
+
+.size-list .size-item {
+    margin-right: 16px;
+    color: var(--dark-grey);
+    border: 1px solid var(--pinkish-grey);
+    padding: 0 18px;
+}
+
+.size-list .size-item:hover {
+    border: 1px solid var(--pale-orange);
+    color: var(--dark-grey);
+}
+
+.size-list .ant-menu-item-selected, .size-list .ant-menu-item-selected:hover {
+    border: 1px solid var(--pale-orange);
+    color: white;
+    background-color: var(--pale-orange);
+}
+
+/* Color filter */
+.color-button {
+    width: 20%;
+}
+
+.color-button .ant-btn:empty {
+    visibility: visible;
+}
+
+/* Brand filter */
+.checkbox-filter-container {
+    width: 90%;
+}
+.checkbox-filter-container .ant-checkbox-wrapper {
+    width: 100%;
+    padding: 7px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-filter-container .ant-checkbox-wrapper>.ant-checkbox {
+    margin-bottom: -4px;
+}
+
+/* Price filter */
+.slider-filter {
+    margin: 10px 30px 10px 10px;
+}
+
+.plus-minus-btn, .plus-minus-btn:hover, .plus-minus-btn:focus {
+    font-size: 16px;
+    color: var(--dark-grey);
+    border: none;
+}

@@ -1,0 +1,4 @@
+.cart-action, .cart-action:hover, .cart-action:focus {
+    font-size: 12px;
+    color: var(--dark-grey);
+}

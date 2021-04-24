@@ -1,0 +1,130 @@
+/* Layout */
+
+.seller-layout {
+    background-color: var(--white-two);
+}
+
+.seller-layout .main-seller-container {
+    background-color: var(--white-two);
+}
+
+.content-container {
+    min-height: 400px;
+    margin: 20px;
+}
+
+/* Menu */
+
+.sider-container {
+    background-color: var(--white-two);
+    box-shadow: 1px 0 0 0 var(--white-three);
+}
+
+.sidemenu-custom {
+    background-color: var(--white-two);
+}
+
+.sidemenu-custom .ant-menu-item {
+    padding: 0 25px;
+}
+
+.menu-item-link {
+    color: var(--charcoal-grey);
+}
+
+.logo {
+    max-width: 60%;
+    position: relative;
+    left: 40px;
+    margin-top: 33px;
+    margin-bottom: 50px;
+}
+
+/* Button */
+
+.seller-login-btn, .seller-login-btn:hover, .seller-login-btn:focus, 
+.default-btn, .default-btn:hover {
+    height: auto;
+    padding: 7px 16px;
+    color: white;
+    background-color: var(--pale-orange);
+    border: none;
+}
+.seller-login-btn, .seller-login-btn:hover {
+    padding: 12px 16px !important;
+}
+.sort-date-btn, .sort-date-btn:hover, .sort-date-btn:focus {
+    height: auto;
+    padding: 9px 16px;
+    color: var(--charcoal-grey);
+    border: solid 1px var(--white-three);
+}
+.light-btn, .light-btn:hover {
+    height: auto;
+    padding: 9px 16px;
+    color: var(--pale-orange);
+    border: solid 1px var(--white-three);
+}
+
+.light-btn:hover {
+    border: solid 1px var(--pale-orange);
+}
+
+.seller-login-btn {
+    margin-top: 32px;
+    padding: 12px 54px;
+}
+
+/* Search */
+
+.seller-search-product {
+    max-height: unset;
+    padding: 5px 20px;
+}
+
+.export-icon {
+    color: #ffa15f;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+/* Login form */
+
+.seller-login-form {
+    position: absolute;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 32px;
+    opacity: 0.8;
+    border-radius: 2px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px 0 var(--black-8);
+    background-color: rgba(61, 61, 63, 0.8);
+}
+
+.login-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 1.31;
+    text-align: center;
+    color: var(--pale-orange);
+}
+
+.seller-form-input {
+    padding: 12px 12px;
+    /* background-color: var(--white-two); */
+    border: solid 1px var(--white-three);
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.select-status .ant-select-selector {
+    height: auto !important;
+    padding: 10px 10px !important;
+    /* background-color: var(--white-two); */
+    border: solid 1px var(--white-three) !important;
+    border-radius: 2px;
+}

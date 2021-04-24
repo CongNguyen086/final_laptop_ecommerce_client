@@ -1,0 +1,10 @@
+.seller-header {
+    padding: 20px;
+    height: unset;
+    background-color: var(--white-two);
+    border-bottom: none;
+    line-height: 0px;
+}
+.header-icon {
+    height: 22px;
+}

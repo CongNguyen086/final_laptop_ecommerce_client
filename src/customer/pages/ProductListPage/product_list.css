@@ -1,0 +1,79 @@
+.product-list-page {
+    margin-top: 35px;
+}
+
+.product-list-container {
+    margin-top: 10px;
+    min-height: 200px;
+}
+
+.product-card {
+    width: 20%;
+    margin-bottom: 10px;
+}
+.product-card .ant-card-hoverable:hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+}
+.product-card .ant-card-cover {
+    margin: -10px;
+}
+
+.menu-title {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: var(--dark-grey);
+}
+
+.category-menu, .filter-menu {
+    border: unset;
+    background: unset;
+}
+
+.category-item {
+    letter-spacing: -0.1px;
+    color: var(--greyish-brown);
+    padding: 0 !important;
+}
+
+.category-item:hover {
+    color: var(--bright-orange);
+    background: unset;
+}
+
+.category-menu .ant-menu-item-selected {
+    color: var(--bright-orange);
+    background: unset !important;
+}
+
+.category-divider {
+    margin: 0;
+    min-width: 10%;
+    width: 20%;
+    color: var(--brown-grey);
+}
+
+.filter-menu .ant-collapse-header {
+    padding: 12px 0 !important;
+}
+
+.filter-menu .ant-collapse-content-box {
+    padding: 16px 0;
+}
+
+.filter-menu>.ant-collapse-item {
+    border-bottom: 0.5px solid var(--white-three);
+}
+
+.filter-menu .ant-collapse-content {
+    border-top: 0.5px dashed var(--white-three);
+    border-bottom: 0.2px solid var(--white-three);
+}
+
+.side-divider {
+    margin: 54px 0;
+    min-width: 10%;
+    width: 80%;
+    color: var(--brown-grey);
+}
