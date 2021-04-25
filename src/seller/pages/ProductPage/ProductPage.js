@@ -41,7 +41,7 @@ export default function ProductPage() {
                 </Col>
                 <Col span={3}>
                     <Button className='default-btn'>
-                        <Link to='/seller/products/create'>
+                        <Link to='/admin/products/create'>
                             <span style={{ fontSize: 18, marginRight: 8 }}>+</span>
                             <b>Add product</b>
                         </Link>

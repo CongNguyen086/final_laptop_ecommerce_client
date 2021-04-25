@@ -8,8 +8,8 @@ import MainLayout from './MainLayout'
 export default function SellerLayout() {
     return (
         <Switch>
-            <Route path='/seller/login' exact component={LoginPage} />
-            <Route path='/seller' component={MainLayout} />
+            <Route path='/admin/login' exact component={LoginPage} />
+            <Route path='/admin' component={MainLayout} />
         </Switch>
     )
 }

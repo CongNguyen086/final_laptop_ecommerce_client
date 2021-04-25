@@ -1,21 +1,16 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
 import { Row, Col, Breadcrumb, Pagination, Divider, Spin } from 'antd'
 import { useParams } from 'react-router-dom'
-import './product_list.css'
 import { BASE_URL } from '../../../config/api'
 import { sizeList, colorList, statusList } from '../../../_mocks/filterOptions'
+import { axiosInstance } from '../../../axios'
 import { arrayBufferToBase64 } from '../../../utils'
 // Components
 import SortBox from '../../components/SortBox'
 import ProductList from './ProductList'
-import CategoryList from './FilterContainer/CategoryList'
 import FilterOptions from './FilterContainer/FilterOptions'
 
-// (() => {
-//     for (let i = 0; i < 4; i++) {
-//         productList.push(...productList);
-//     }
-// })()
+import './product_list.css'
 
 const sortOptions = [
     {
@@ -40,7 +35,6 @@ const sortOptions = [
     },
 ]
 const productApiUrl = BASE_URL + '/products'
-const categoryApiUrl = BASE_URL + '/categories'
 const brandApiUrl = BASE_URL + '/brands'
 
 export default function ProductListPage() {
@@ -52,9 +46,7 @@ export default function ProductListPage() {
     const [currentPage, setCurrentPage] = useState(1)
     const [numberPerPage, setNumberPerPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
-    const [categoryList, setCategoryList] = useState([])
     const [brandList, setBrandList] = useState([])
-    const [filteredCategory, setFilteredCategory] = useState('all')
     const [filterOptions, setFilterOptions] = useState({
         size: '',
         color: '',
@@ -94,20 +86,16 @@ export default function ProductListPage() {
         handleProductListChange(productList)
         return productList
     }
-    const fetchProductsByCategory = async (currentPage, filteredCategory, order = 'name asc') => {
+    const fetchProductsByCategory = async (currentPage, currentCategory, order = 'name asc') => {
         const res = await fetch(productApiUrl
-            + `/${filteredCategory}?page=${currentPage}&order=${order}`)
+            + `/${currentCategory}?page=${currentPage}&order=${order}`)
         const productList = await res.json()
         convertPhotoBufferToBase64(productList)
         console.log(productList)
         handleProductListChange(productList)
         return productList
     }
-    const fetchCategoryList = async () => {
-        const res = await fetch(categoryApiUrl + `/${categorySlug}`)
-        const list = await res.json()
-        setCategoryList(list)
-    }
+
     const fetchBrandList = async () => {
         const res = await fetch(brandApiUrl)
         const list = await res.json()
@@ -115,22 +103,24 @@ export default function ProductListPage() {
     }
 
     useEffect(() => {
+        axiosInstance.get('/product/getFilterOptions')
+            .then((response) => setFilterOptions(response.data));
+    }, []);
+
+    useEffect(() => {
         setLoading(true)
         fetchAllProducts(currentPage, filterOptions)
-        fetchCategoryList()
         fetchBrandList()
-    }, [currentPage])
+    }, [currentPage]);
+
     useEffect(() => {
         if (isInitialMount.current) {
             isInitialMount.current = false;
-        } else if (filteredCategory == 'all') {
+        } else  {
             setLoading(true)
-            fetchAllProducts(1, filterOptions, sortOption.sortType)
-        } else {
-            setLoading(true)
-            fetchProductsByCategory(1, filteredCategory, sortOption.sortType)
+            fetchProductsByCategory(1, 'android', sortOption.sortType)
         }
-    }, [filteredCategory, filterOptions, sortOption])
+    }, [filterOptions, sortOption])
 
     const onSort = e => {
         const id = e.key
@@ -138,10 +128,6 @@ export default function ProductListPage() {
     }
     const handlePaginationChange = (value) => {
         setCurrentPage(value)
-    }
-    const handleSelectedCategory = item => {
-        setFilteredCategory(item.key)
-        setCurrentPage(1)
     }
     const handleSizeFilter = item => {
         const selectedKeys = item.selectedKeys
@@ -215,11 +201,11 @@ export default function ProductListPage() {
                         colorList={colorList}
                         onSelect={handleSelectedCategory}
                     /> */}
-                    <CategoryList
+                    {/* <CategoryList
                         categoryList={categoryList}
                         onSelect={handleSelectedCategory}
-                    />
-                    <Divider className='side-divider' />
+                    /> */}
+                    {/* <Divider className='side-divider' /> */}
                     <FilterOptions
                         sizeProps={sizeProps}
                         colorProps={colorProps}

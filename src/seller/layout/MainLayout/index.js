@@ -22,7 +22,7 @@ const TitleWithBreadcrumb = ({ text }) => (
         <Title>{text}</Title>
         <Breadcrumb>
             <Breadcrumb.Item>
-                <Link to='/seller/products'>Products</Link>
+                <Link to='/admin/products'>Products</Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>Add product</Breadcrumb.Item>
         </Breadcrumb>
@@ -31,10 +31,10 @@ const TitleWithBreadcrumb = ({ text }) => (
 const getTitle = pathname => {
     let title = null
     switch (pathname) {
-        case '/seller/products':
+        case '/admin/products':
             title = <Title>Products</Title>
             break;
-        case '/seller/products/create':
+        case '/admin/products/create':
             title = <TitleWithBreadcrumb text='Add product' />
             break;
         default:

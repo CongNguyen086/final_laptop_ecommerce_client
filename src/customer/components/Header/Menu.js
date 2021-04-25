@@ -33,7 +33,7 @@ function Menu() {
                 console.log(categories);
                 setMenu(categories.map((category) => ({
                     name: capitalize(category.name),
-                    url: `/product/${category.name}`,
+                    url: `/${category.name}`,
                     onClick: () => { },
                 })));
             })

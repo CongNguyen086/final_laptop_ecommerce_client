@@ -58,7 +58,7 @@ function LoginForm(props) {
             .then(res => res.json())
             .then(seller => {
                 localStorage.setItem('sellerInfo', JSON.stringify(seller))
-                props.history.push('/seller/products')
+                props.history.push('/admin/products')
             })
             .catch(err => {
                 setLoading(false)

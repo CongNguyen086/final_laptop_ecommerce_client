@@ -12,31 +12,31 @@ export default [
     {
         name: 'Overview',
         icon: BarChartOutlined,
-        link: '/seller/overview'
+        link: '/admin/overview'
     },
     {
         name: 'Orders',
         icon: ShoppingCartOutlined,
-        link: '/seller/orders'
+        link: '/admin/orders'
     },
     {
         name: 'Products',
         icon: BarsOutlined,
-        link: '/seller/products'
+        link: '/admin/products'
     },
     {
         name: 'Payments',
         icon: DollarCircleOutlined,
-        link: '/seller/payments'
+        link: '/admin/payments'
     },
     {
         name: 'Promotions',
         icon: TagOutlined,
-        link: '/seller/promotions'
+        link: '/admin/promotions'
     },
     {
         name: 'Setting',
         icon: SettingOutlined,
-        link: '/seller/setting'
+        link: '/admin/setting'
     }
 ]
