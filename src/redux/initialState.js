@@ -1,8 +1,17 @@
 export default {
   auth: {
-    currentUser: null
+    currentUser: {},
   },
   common: {
     categoryList: [],
+    currentCategory: {},
+    currentFilterOptions: {
+      brand: [],
+      ram: [],
+      storage: [],
+      camera: [],
+      specialFeature: [],
+      available: [],
+    },
   },
 };

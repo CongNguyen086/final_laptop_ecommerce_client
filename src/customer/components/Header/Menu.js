@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { List, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
+import { connect } from 'react-redux';
+
 import { BASE_URL } from '../../../config/api'
 import { axiosInstance } from '../../../axios'
 import { NavLink } from 'react-router-dom'
 import capitalize from 'lodash/capitalize';
+import actions from '../../../redux/actions';
+import selectors from '../../../redux/selectors';
 
 // const SubMenuList = ({ menuItem, subMenu }) => {
 //     const column = subMenu.length
@@ -24,17 +28,16 @@ import capitalize from 'lodash/capitalize';
 //     )
 // }
 
-function Menu() {
-    const [categoryMenu, setMenu] = useState([]);
+function Menu({ categoryList, setCategoryList }) {
     useEffect(() => {
         axiosInstance(BASE_URL + '/category/all')
             .then((response) => {
                 const categories = response.data;
-                console.log(categories);
-                setMenu(categories.map((category) => ({
+                setCategoryList(categories.map((category) => ({
+                    ...category,
                     name: capitalize(category.name),
-                    url: `/${category.name}`,
-                    onClick: () => { },
+                    url: `/${category.slug}`,
+                    onClick: () => {},
                 })));
             })
     }, []);
@@ -45,11 +48,11 @@ function Menu() {
           url: '/homepage',
           onClick: () => { },
         },
-        ...categoryMenu,
+        ...categoryList,
       ];
     const handleClickMenuItem = (item) => item.onClick && item.onClick();
 
-    if (!categoryMenu.length) return null
+    if (!categoryList.length) return null
     return (
         <List
             grid={{ gutter: 24, column: menuList.length }}
@@ -82,4 +85,12 @@ function Menu() {
     )
 }
 
-export default Menu;
+const mapStateToProps = (state) => ({
+    categoryList: selectors.getCategoryList(state),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    setCategoryList: (list) => dispatch(actions.setCategoryList(list)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

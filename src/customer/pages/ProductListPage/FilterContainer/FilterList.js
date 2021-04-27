@@ -2,7 +2,7 @@ import React from 'react'
 import { Divider } from 'antd'
 // Components
 import CategoryList from './CategoryList'
-import FilterOptions from './FilterOptions'
+import FilterOptions from './FilterContainer'
 
 export default function FilterList({ colorList, ...categoryList }) {
     return (

@@ -1,3 +1,5 @@
+import { FilterOptions } from "../constants/filterOptions"
+
 export const sortObjectByField = (data, field, startDirection) => {
     if (startDirection == 'asc') {
         data.sort((a, b) => {
@@ -31,4 +33,15 @@ export const arrayBufferToBase64 = (buffer) => {
     let imgStr = window.btoa(binary)
     return (base64Flag + imgStr)
     
+}
+
+export const mapDataToFilterOptions = (data) => {
+    return FilterOptions.map((option) => {
+        const filterList = data.find((item) => item.type === option.type);
+        return {
+            title: option.title,
+            type: option.type,
+            data: filterList?.data,
+        };
+    });
 }
